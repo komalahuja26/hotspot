@@ -107,24 +107,26 @@ body {
 
 /* Bottom navigation */
 .bottom-nav {
-  display: flex;
+  display: fixed;
   justify-content: space-around;
   align-items: center;
   background: white;
-  border-top: 0px solid #ccc;
+  border-top: 1px solid #ccc;
   padding: 10px 0;
 }
 
 .nav-item {
   text-align: center;
-  flex: 1;
+  flex: 1;               /* equal spacing */
   color: #666;
-  font-size: 14px;
+  font-size: 3vw;        /* font scales with screen width */
 }
 
 .nav-item img {
-  width: 20px;
-  height: 20px;
+  width: 8vw;            /* image scales with screen size */
+  max-width: 40px;       /* don’t get too big */
+  min-width: 20px;       /* don’t get too small */
+  height: auto;          /* keep proportions */
   display: block;
   margin: 0 auto 5px;
 }
