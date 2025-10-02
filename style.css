@@ -1,3 +1,4 @@
+/* ====== General Styles ====== */
 body {
   font-family: Arial, sans-serif;
   background: #f9f9f9;
@@ -8,7 +9,7 @@ body {
   justify-content: space-between;
 }
 
-/* Top Navbar */
+/* ====== Top Navbar ====== */
 .top-nav {
   display: flex;
   justify-content: flex-start;  /* align left */
@@ -29,23 +30,7 @@ body {
   cursor: pointer;
 }
 
-/* Mobile adjustments */
-@media screen and (max-width: 480px) {
-  .top-nav {
-    padding: 8px 15px;
-  }
-
-  .top-nav .nav-icon {
-    width: 24px;
-    height: 24px;
-  }
-
-  .nav-left {
-    gap: 10px;
-  }
-}
-
-/* Card */
+/* ====== Card ====== */
 .card {
   background: #a23b5b;
   color: white;
@@ -55,7 +40,7 @@ body {
   margin: 20px;
 }
 
-/* Bus Video */
+/* ====== Bus Video ====== */
 .bus-container {
   position: relative;
   height: 150px;
@@ -68,15 +53,14 @@ body {
   height: 100%;
   object-fit: contain; /* keeps proportions */
 }
-#busVideo::-webkit-media-controls {
-  display: none !important;
-}
+
+/* Hide video controls */
+#busVideo::-webkit-media-controls,
 #busVideo::-webkit-media-controls-enclosure {
   display: none !important;
 }
 
-
-/* Buttons */
+/* ====== Buttons ====== */
 .expire-btn, .live-map-btn {
   background: #ff5c5c;
   border: none;
@@ -105,37 +89,106 @@ body {
   margin-bottom: 15px;
 }
 
-/* Bottom navigation */
+/* ====== Bottom Navigation ====== */
 .bottom-nav {
-  display: fixed;
+  position: fixed;         /* fixed at bottom */
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
   justify-content: space-around;
   align-items: center;
   background: white;
   border-top: 1px solid #ccc;
   padding: 10px 0;
+  box-sizing: border-box;
+  z-index: 1000;
 }
 
-.nav-item {
-  text-align: center;
-  flex: 1;               /* equal spacing */
-  color: #666;
-  font-size: 3vw;        /* font scales with screen width */
+.bottom-nav img {
+  width: 12vw;             /* scale with screen width */
+  max-width: 50px;         /* don’t get too big */
+  min-width: 24px;         /* don’t get too small */
+  height: auto;            /* keep proportions */
 }
 
-.nav-item img {
-  width: 8vw;            /* image scales with screen size */
-  max-width: 40px;       /* don’t get too big */
-  min-width: 20px;       /* don’t get too small */
-  height: auto;          /* keep proportions */
-  display: block;
-  margin: 0 auto 5px;
-}
-
+/* ====== Active nav item ====== */
 .nav-item.active {
   color: #00a3af;
 }
+
+/* ====== Mobile adjustments (general) ====== */
 @media screen and (max-width: 480px) {
+  .top-nav {
+    padding: 8px 15px;
+  }
+
+  .top-nav .nav-icon {
+    width: 24px;
+    height: 24px;
+  }
+
+  .nav-left {
+    gap: 10px;
+  }
+
+  .card {
+    padding: 15px;
+    margin: 15px;
+  }
+
+  .bus-container {
+    height: 120px;
+    margin: 15px 0;
+  }
+
+  .expire-btn, .live-map-btn {
+    padding: 8px 16px;
+    font-size: 14px;
+  }
+
   .bottom-nav img {
-    width: 20vw;  /* smaller screens, bigger relative size */
+    width: 18vw;
+    max-width: 40px;
+    min-width: 20px;
+  }
+}
+
+/* ====== iPhone-specific adjustments ====== */
+/* iPhone / small mobile screens */
+@media screen and (max-width: 430px) {
+  /* Top Navbar icons smaller */
+  .top-nav .nav-icon {
+    width: 22px;
+    height: 22px;
+  }
+
+  .nav-left {
+    gap: 8px;
+  }
+
+  /* Bottom navigation icons */
+  .bottom-nav img {
+    width: 18vw;
+    max-width: 40px;
+    min-width: 20px;
+  }
+
+  /* Card adjustments */
+  .card {
+    padding: 15px;
+    margin: 15px;
+  }
+
+  /* Bus container smaller */
+  .bus-container {
+    height: 120px;
+    margin: 15px 0;
+  }
+
+  /* Buttons smaller */
+  .expire-btn, .live-map-btn {
+    padding: 8px 16px;
+    font-size: 14px;
   }
 }
