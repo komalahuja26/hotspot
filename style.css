@@ -5,29 +5,30 @@ body {
   margin: 0;
   display: flex;
   flex-direction: column;
-  height: 100vh;
-  justify-content: space-between;
+  min-height: 100vh;
+  box-sizing: border-box;
+}
+
+/* Main content to avoid overlapping footer */
+.main-content {
+  padding-bottom: 80px; /* space for footer */
 }
 
 /* ====== Top Navbar ====== */
 .top-nav {
   display: flex;
-  justify-content: flex-start;  /* align left */
+  justify-content: flex-start;
   align-items: center;
   padding: 10px 20px;
   background: white;
   border-bottom: 1px solid #ccc;
 }
 
-.nav-left {
-  display: flex;
-  gap: 15px; /* space between menu and arrow */
-}
-
 .top-nav .nav-icon {
   width: 28px;
   height: 28px;
   cursor: pointer;
+  margin-right: 10px;
 }
 
 /* ====== Card ====== */
@@ -38,6 +39,7 @@ body {
   border-radius: 15px;
   text-align: center;
   margin: 20px;
+  box-sizing: border-box;
 }
 
 /* ====== Bus Video ====== */
@@ -51,7 +53,7 @@ body {
 #busVideo {
   width: 100%;
   height: 100%;
-  object-fit: contain; /* keeps proportions */
+  object-fit: contain;
 }
 
 /* Hide video controls */
@@ -61,134 +63,109 @@ body {
 }
 
 /* ====== Buttons ====== */
-.expire-btn, .live-map-btn {
+.expire-btn {
   background: #ff5c5c;
   border: none;
   color: white;
-  padding: 10px 20px;
+  padding: 14px 40px;
   margin: 10px 0;
-  border-radius: 10px;
+  border-radius: 25px;
   cursor: pointer;
   font-size: 16px;
+  min-width: 180px;
+  max-width: 90%;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  transition: 0.2s;
 }
 
-/* Expire button */
-.expire-btn {
-  background: #ff5c5c;
+.expire-btn:hover {
+  transform: scale(1.03);
 }
 
-/* Live Map button */
-.live-map-btn {
-  background: #ff6f61;
-}
-
-/* Center Live Map button */
+/* ====== Live Map container & button ====== */
 .live-map-container {
   display: flex;
-  justify-content: center;  /* centers horizontally */
-  margin-bottom: 15px;
+  justify-content: center;
+  margin: 20px 0 40px 0; /* spacing above footer */
 }
 
-/* ====== Bottom Navigation ====== */
+.live-map-btn {
+  background: #ff6f61;
+  border: none;
+  color: white;
+  padding: 14px 40px;
+  border-radius: 25px;
+  cursor: pointer;
+  font-size: 16px;
+  min-width: 180px;
+  max-width: 90%;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  transition: 0.2s;
+}
+
+.live-map-btn:hover {
+  transform: scale(1.03);
+}
+
+/* ====== Bottom Navigation / Footer ====== */
 .bottom-nav {
-  position: fixed;         /* fixed at bottom */
+  position: fixed;
   bottom: 0;
   left: 0;
   width: 100%;
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
   align-items: center;
   background: white;
   border-top: 1px solid #ccc;
-  padding: 10px 0;
-  box-sizing: border-box;
-  z-index: 1000;
+  padding: 5px 0;
+  z-index: 10;
 }
 
-.bottom-nav img {
-  width: 12vw;             /* scale with screen width */
-  max-width: 50px;         /* don’t get too big */
-  min-width: 24px;         /* don’t get too small */
-  height: auto;            /* keep proportions */
+.bottom-nav .nav-bar-img {
+  width: 95%;
+  max-width: 430px;
+  height: auto;
+  object-fit: contain;
 }
 
-/* ====== Active nav item ====== */
-.nav-item.active {
-  color: #00a3af;
-}
-
-/* ====== Mobile adjustments (general) ====== */
-@media screen and (max-width: 480px) {
+/* ====== iPhone / small screens adjustments ====== */
+@media screen and (max-width: 430px) {
   .top-nav {
     padding: 8px 15px;
   }
 
   .top-nav .nav-icon {
-    width: 24px;
-    height: 24px;
-  }
-
-  .nav-left {
-    gap: 10px;
-  }
-
-  .card {
-    padding: 15px;
-    margin: 15px;
-  }
-
-  .bus-container {
-    height: 120px;
-    margin: 15px 0;
-  }
-
-  .expire-btn, .live-map-btn {
-    padding: 8px 16px;
-    font-size: 14px;
-  }
-
-  .bottom-nav img {
-    width: 18vw;
-    max-width: 40px;
-    min-width: 20px;
-  }
-}
-
-/* ====== iPhone-specific adjustments ====== */
-/* iPhone / small mobile screens */
-@media screen and (max-width: 430px) {
-  /* Top Navbar icons smaller */
-  .top-nav .nav-icon {
     width: 22px;
     height: 22px;
   }
 
-  .nav-left {
-    gap: 8px;
-  }
-
-  /* Bottom navigation icons */
-  .bottom-nav img {
-    width: 18vw;
-    max-width: 40px;
-    min-width: 20px;
-  }
-
-  /* Card adjustments */
   .card {
     padding: 15px;
     margin: 15px;
   }
 
-  /* Bus container smaller */
   .bus-container {
     height: 120px;
     margin: 15px 0;
   }
 
-  /* Buttons smaller */
   .expire-btn, .live-map-btn {
-    padding: 8px 16px;
+    padding: 12px 32px;
     font-size: 14px;
+  }
+
+  .card h2, .card h3 {
+    font-size: 4vw;
+  }
+
+  .live-map-container {
+    margin-bottom: 40px;
+  }
+
+  .bottom-nav .nav-bar-img {
+    width: 100%;
+    max-width: 430px;
+    height: auto;
   }
 }
