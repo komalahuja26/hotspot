@@ -1,0 +1,127 @@
+body {
+  font-family: Arial, sans-serif;
+  background: #f9f9f9;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  justify-content: space-between;
+}
+
+/* Top Navbar */
+.top-nav {
+  display: flex;
+  justify-content: flex-start;  /* align left */
+  align-items: center;
+  padding: 10px 20px;
+  background: white;
+  border-bottom: 1px solid #ccc;
+}
+
+.nav-left {
+  display: flex;
+  gap: 15px; /* space between menu and arrow */
+}
+
+.top-nav .nav-icon {
+  width: 28px;
+  height: 28px;
+  cursor: pointer;
+}
+
+/* Mobile adjustments */
+@media screen and (max-width: 480px) {
+  .top-nav {
+    padding: 8px 15px;
+  }
+
+  .top-nav .nav-icon {
+    width: 24px;
+    height: 24px;
+  }
+
+  .nav-left {
+    gap: 10px;
+  }
+}
+
+/* Card */
+.card {
+  background: #a23b5b;
+  color: white;
+  padding: 20px;
+  border-radius: 15px;
+  text-align: center;
+  margin: 20px;
+}
+
+/* Bus Video */
+.bus-container {
+  position: relative;
+  height: 150px;
+  margin: 20px 0;
+  overflow: hidden;
+}
+
+#busVideo {
+  width: 100%;
+  height: 100%;
+  object-fit: contain; /* keeps proportions */
+}
+
+/* Buttons */
+.expire-btn, .live-map-btn {
+  background: #ff5c5c;
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  margin: 10px 0;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+/* Expire button */
+.expire-btn {
+  background: #ff5c5c;
+}
+
+/* Live Map button */
+.live-map-btn {
+  background: #ff6f61;
+}
+
+/* Center Live Map button */
+.live-map-container {
+  display: flex;
+  justify-content: center;  /* centers horizontally */
+  margin-bottom: 15px;
+}
+
+/* Bottom navigation */
+.bottom-nav {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background: white;
+  border-top: 0px solid #ccc;
+  padding: 10px 0;
+}
+
+.nav-item {
+  text-align: center;
+  flex: 1;
+  color: #666;
+  font-size: 14px;
+}
+
+.nav-item img {
+  width: 20px;
+  height: 20px;
+  display: block;
+  margin: 0 auto 5px;
+}
+
+.nav-item.active {
+  color: #00a3af;
+}

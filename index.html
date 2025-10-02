@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Transit Pass</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+     <!-- Top Navbar -->
+  <div class="top-nav">
+    <img src="menu.png" alt="Menu" class="nav-icon"> &nbsp;
+    <img src="arrow-left.png" alt="Back" class="nav-icon">
+    
+  </div>
+  <!-- Card Section -->
+  <div class="card">
+    <h3>Adult Single Ride</h3>
+    <h2 id="dateTime"></h2>
+   
+    <h2 id="time"></h2> <!-- separate time line --><br><br>
+
+    <h3>Barrie Transit</h3>
+    <div class="bus-container">
+      <video id="busVideo" autoplay loop muted>
+        <source src="bus.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+    </div>
+
+    <button class="expire-btn">Expire</button>
+    <p id="countdown">This pass expires after 90 minutes</p>
+    <p>User ID 1111160388</p>
+  </div>
+
+  <!-- Live Map button outside the card -->
+  <div class="live-map-container">
+    <button class="live-map-btn">Live Map</button>
+  </div>
+
+  <!-- Bottom Navigation -->
+  <div class="bottom-nav">
+    <img src="nav-icons.jpeg" alt="Navigation" class="nav-bar-img">
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
