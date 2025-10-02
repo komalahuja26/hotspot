@@ -134,3 +134,8 @@ body {
 .nav-item.active {
   color: #00a3af;
 }
+@media screen and (max-width: 480px) {
+  .bottom-nav img {
+    width: 20vw;  /* smaller screens, bigger relative size */
+  }
+}
