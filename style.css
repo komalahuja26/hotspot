@@ -9,9 +9,8 @@ body {
   box-sizing: border-box;
 }
 
-/* Main content to avoid overlapping footer */
 .main-content {
-  padding-bottom: 80px; /* space for footer */
+  padding-bottom: 100px; /* space for footer */
 }
 
 /* ====== Top Navbar ====== */
@@ -35,25 +34,44 @@ body {
 .card {
   background: #a23b5b;
   color: white;
-  padding: 20px;
-  border-radius: 15px;
+  padding: 25px 20px;
+  border-radius: 20px;
   text-align: center;
-  margin: 20px;
+  margin: 15px auto;
   box-sizing: border-box;
+  width: 90%;
+  max-width: 400px;
+}
+
+.card h2, .card h3, .card p {
+  margin: 12px 0;
+}
+
+.card h2 {
+  font-size: 22px;
+}
+.card h3 {
+  font-size: 18px;
+}
+.card p {
+  font-size: 16px;
 }
 
 /* ====== Bus Video ====== */
 .bus-container {
   position: relative;
-  height: 150px;
+  width: 100%;
+  height: 25vh;  /* 25% of viewport height */
   margin: 20px 0;
   overflow: hidden;
+  border-radius: 15px;
 }
 
 #busVideo {
   width: 100%;
   height: 100%;
-  object-fit: contain;
+  object-fit: cover;
+  border-radius: 15px;
 }
 
 /* Hide video controls */
@@ -67,14 +85,14 @@ body {
   background: #ff5c5c;
   border: none;
   color: white;
-  padding: 14px 40px;
-  margin: 10px 0;
-  border-radius: 25px;
+  padding: 16px 50px;
+  margin: 15px 0;
+  border-radius: 30px;
   cursor: pointer;
-  font-size: 16px;
+  font-size: 18px;
   min-width: 180px;
   max-width: 90%;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  box-shadow: 0 5px 8px rgba(0,0,0,0.15);
   transition: 0.2s;
 }
 
@@ -82,24 +100,23 @@ body {
   transform: scale(1.03);
 }
 
-/* ====== Live Map container & button ====== */
 .live-map-container {
   display: flex;
   justify-content: center;
-  margin: 20px 0 40px 0; /* spacing above footer */
+  margin: 25px 0 50px 0;
 }
 
 .live-map-btn {
   background: #ff6f61;
   border: none;
   color: white;
-  padding: 14px 40px;
-  border-radius: 25px;
+  padding: 16px 50px;
+  border-radius: 30px;
   cursor: pointer;
-  font-size: 16px;
+  font-size: 18px;
   min-width: 180px;
   max-width: 90%;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  box-shadow: 0 5px 8px rgba(0,0,0,0.15);
   transition: 0.2s;
 }
 
@@ -124,7 +141,7 @@ body {
 
 .bottom-nav .nav-bar-img {
   width: 95%;
-  max-width: 430px;
+  max-width: 400px;
   height: auto;
   object-fit: contain;
 }
@@ -141,31 +158,40 @@ body {
   }
 
   .card {
-    padding: 15px;
-    margin: 15px;
+    padding: 18px 15px;
+    margin: 10px auto;
+    width: 92%;
   }
 
   .bus-container {
-    height: 120px;
+    height: 22vh; /* slightly shorter for small screens */
     margin: 15px 0;
   }
 
   .expire-btn, .live-map-btn {
-    padding: 12px 32px;
+    padding: 14px 40px;
+    font-size: 16px;
+  }
+
+  .card h2 {
+    font-size: 20px;
+  }
+
+  .card h3 {
+    font-size: 16px;
+  }
+
+  .card p {
     font-size: 14px;
   }
 
-  .card h2, .card h3 {
-    font-size: 4vw;
-  }
-
   .live-map-container {
-    margin-bottom: 40px;
+    margin-bottom: 50px;
   }
 
   .bottom-nav .nav-bar-img {
     width: 100%;
-    max-width: 430px;
+    max-width: 400px;
     height: auto;
   }
 }
