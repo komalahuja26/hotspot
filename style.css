@@ -68,6 +68,13 @@ body {
   height: 100%;
   object-fit: contain; /* keeps proportions */
 }
+#busVideo::-webkit-media-controls {
+  display: none !important;
+}
+#busVideo::-webkit-media-controls-enclosure {
+  display: none !important;
+}
+
 
 /* Buttons */
 .expire-btn, .live-map-btn {
