@@ -56,16 +56,16 @@ body {
 
 /* Date */
 #dateTime {
-  font-size: 20px;
-  font-weight: 700;
-  margin: 0;
+  font-size: 22px;      /* smaller */
+  font-weight: 600;     /* semi-bold */
+  margin: 0 0 8px 0;
 }
 
 /* Time */
 #time {
-  font-size: 28px;
-  font-weight: 700;
-  margin: 5px 0 20px 0;
+  font-size: 22px;      /* bigger */
+  font-weight: 600;     /* extra bold */
+  margin: 0 0 12px 0;
 }
 
 /* Barrie Transit */
@@ -232,4 +232,5 @@ body {
     height: auto;
   }
 }
+
 
