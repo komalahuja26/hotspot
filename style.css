@@ -57,14 +57,14 @@ body {
 
 /* Date */
 #dateTime {
-  font-size: 28px;      /* smaller */
+  font-size: 32px;      /* smaller */
   font-weight: 800;     /* semi-bold */
   margin: 0 0 12px 0;
 }
 
 /* Time */
 #time {
-  font-size: 28px;      /* bigger */
+  font-size: 32px;      /* bigger */
   font-weight: 800;     /* extra bold */
   margin: 0 0 12px 0;
 }
@@ -234,6 +234,7 @@ body {
     height: auto;
   }
 }
+
 
 
 
