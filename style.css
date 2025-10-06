@@ -79,7 +79,7 @@ body {
 
 /* Countdown text */
 #countdown {
-  font-size: 16px;
+  font-size: 18px;
   font-weight: 600;
   margin-top: 15px;
 }
@@ -234,6 +234,7 @@ body {
     height: auto;
   }
 }
+
 
 
 
